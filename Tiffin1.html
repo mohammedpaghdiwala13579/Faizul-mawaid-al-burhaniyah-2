@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Tiffin Service - Weekly Menu (Google Sheets Integrated)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <span><img src="https://i.postimg.cc/HLj8yRyp/panchgani-removebg-preview.png" height="100"></span>
+                <span><img src="https://i.postimg.cc/CMttfwC3/fmb.png" height="100"></span>
+            </div>
+
+            <div class="name-input-container" style="margin-top:12px;">
+                <label for="customer-name">Name:</label>
+                <input type="text" id="customer-name" placeholder="Enter your name" autocomplete="on">
+            </div>
+
+            <div class="header-actions">
+                <button id="view-db-link" class="view-db-btn" type="button" aria-haspopup="dialog" aria-controls="db-password-modal" data-href="https://docs.google.com/spreadsheets/d/1E_Um7247eCREoxiXttCCd76xRgFB6nMCf3bzzMrNch0/edit">
+                    <i class="fas fa-database"></i>
+                    View Orders Database
+                </button>
+            </div>
+        </header>
+
+        <div class="days-tabs">
+            <button class="day-tab active" data-day="monday">Monday</button>
+            <button class="day-tab" data-day="tuesday">Tuesday</button>
+            <button class="day-tab" data-day="wednesday">Wednesday</button>
+            <button class="day-tab" data-day="thursday">Thursday</button>
+            <button class="day-tab" data-day="friday">Friday</button>
+            <button class="day-tab" data-day="saturday">Saturday</button>
+            <button class="day-tab" data-day="sunday">Sunday</button>
+        </div>
+
+        <div class="content-area">
+            <!-- Monday -->
+            <div class="day-content active" id="monday">
+                <video class="day-bg" autoplay loop muted playsinline style="opacity: 0.03;">
+                    <source src="https://assets.mixkit.co/videos/preview/mixkit-sunrise-in-nature-1121-large.mp4" type="video/mp4">
+                </video>
+                <h2 class="day-title">Monday's Special</h2>
+
+                <div class="meal-section lunch">
+                    <video autoplay loop muted playsinline>
+                        <source src="https://assets.mixkit.co/videos/preview/mixkit-sunrise-in-nature-1121-large.mp4" type="video/mp4">
+                    </video>
+                    <div class="meal-header lunch"><i class="fas fa-sun"></i><span>LUNCH</span></div>
+                    <div class="dishes-container">
+                        <div class="dish-category">
+                            <div class="category-title">Main Dish(per bowl)</div>
+                            <div class="dish-item"><div class="dish-info"><div class="dish-icon"><i class="fas fa-utensils"></i></div><div class="dish-name">CHICKEN PASTA</div></div><div class="quantity-selector"><button class="qty-btn minus">-</button><div class="qty-display">0</div><button class="qty-btn plus">+</button></div></div>
+                        </div>
+                        <div class="dish-category">
+                            <div class="category-title">Salad(per pkt)</div>
+                            <div class="dish-item"><div class="dish-info"><div class="dish-icon"><i class="fas fa-leaf"></i></div><div class="dish-name">KURKURE SALAD</div></div><div class="quantity-selector"><button class="qty-btn minus">-</button><div class="qty-display">0</div><button class="qty-btn plus">+</button></div></div>
+                        </div>
+                        <div class="dish-category">
+                            <div class="category-title">Fruits(per plate)</div>
+                            <div class="dish-item"><div class="dish-info"><div class="dish-icon"><i class="fas fa-apple-alt"></i></div><div class="dish-name">ANY</div></div><div class="quantity-selector"><button class="qty-btn minus">-</button><div class="qty-display">0</div><button class="qty-btn plus">+</button></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="meal-section dinner">
+                    <video autoplay loop muted playsinline>
+                        <source src="https://assets.mixkit.co/videos/preview/mixkit-full-moon-night-sky-3276-large.mp4" type="video/mp4">
+                    </video>
+                    <div class="meal-header dinner"><i class="fas fa-moon"></i><span>DINNER</span></div>
+                    <div class="dishes-container">
+                        <div class="dish-category">
+                            <div class="category-title">Sweet</div>
+                            <div class="dish-item"><div class="dish-info"><div class="dish-icon"><i class="fas fa-cookie"></i></div><div class="dish-name">RABDI</div></div><div class="quantity-selector"><button class="qty-btn minus">-</button><div class="qty-display">0</div><button class="qty-btn plus">+</button></div></div>
+                        </div>
+                        <div class="dish-category">
+                            <div class="category-title">Starter(per bowl)</div>
+                            <div class="dish-item"><div class="dish-info"><div class="dish-icon"><i class="fas fa-pepper-hot"></i></div><div class="dish-name">GILKI</div></div><div class="quantity-selector"><button class="qty-btn minus">-</button><div class="qty-display">0</div><button class="qty-btn plus">+</button></div></div>
+                        </div>
+                        <div class="dish-category">
+                            <div class="category-title">Roti(per unit)</div>
+                            <div class="dish-item"><div class="dish-info"><div class="dish-icon"><i class="fas fa-bread-slice"></i></div><div class="dish-name">Roti</div></div><div class="quantity-selector"><button class="qty-btn minus">-</button><div class="qty-display">0</div><button class="qty-btn plus">+</button></div></div>
+                        </div>
+                        <div class="dish-category">
+                            <div class="category-title">Rice(per plate)</div>
+                            <div class="dish-item"><div class="dish-info"><div class="dish-icon"><i class="fas fa-bowl-rice"></i></div><div class="dish-name">CHAWAL</div></div><div class="quantity-selector"><button class="qty-btn minus">-</button><div class="qty-display">0</div><button class="qty-btn plus">+</button></div></div>
+                        </div>
+                        <div class="dish-category">
+                            <div class="category-title">Gravy(per bowl)</div>
+                            <div class="dish-item"><div class="dish-info"><div class="dish-icon"><i class="fas fa-bowl-rice"></i></div><div class="dish-name">MASOOR DAL</div></div><div class="quantity-selector"><button class="qty-btn minus">-</button><div class="qty-display">0</div><button class="qty-btn plus">+</button></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="order-summary">
+                    <div class="summary-header"><span>Order Summary</span><span>Monday</span></div>
+                    <div class="summary-items" id="monday-summary"></div>
+                </div>
+
+                <button class="submit-btn" data-day="monday"><i class="fas fa-paper-plane"></i>Submit</button>
+            </div>
+
+            <!-- Tuesday -->
+            <div class="day-content" id="tuesday">
+                <video class="day-bg" autoplay loop muted playsinline style="opacity: 0.03;">
+                    <source src="https://assets.mixkit.co/videos/preview/mixkit-sunrise-in-nature-1121-large.mp4" type="video/mp4">
+                </video>
+                <h2 class="day-title">Tuesday's Special</h2>
+
+                <div class="meal-section lunch">
+                    <video autoplay loop muted playsinline>
+                        <source src="https://assets.mixkit.co/videos/preview/mixkit-sunrise-in-nature-1121-large.mp4" type="video/mp4">
+                    </video>
+                    <div class="meal-header lunch"><i class="fas fa-sun"></i><span>LUNCH</span></div>
+                    <div class="dishes-container">
+                        <div class="dish-category">
+                            <div class="category-title">Main Dish(per pkt)</div>
+                            <div class="dish-item"><div class="dish-info"><div class="dish-icon"><i class="fas fa-utensils"></i></div><div class="dish-name">PANI PURI</div></div><div class="quantity-selector"><button class="qty-btn minus">-</button><div class="qty-display">0</div><button class="qty-btn plus">+</button></div></div>
+                        </div>
+                        <div class="dish-category">
+                            <div class="category-title">Salad(per bowl)</div>
+                            <div class="dish-item"><div class="dish-info"><div class="dish-icon"><i class="fas fa-leaf"></i></div><div class="dish-name">BHEL SALAD</div></div><div class="quantity-selector"><button class="qty-btn minus">-</button><div class="qty-display">0</div><button class="qty-btn plus">+</button></div></div>
+                        </div>
+                        <div class="dish-category">
+                            <div class="category-title">Fruits(per plate)</div>
+                            <div class="dish-item"><div class="dish-info"><div class="dish-icon"><i class="fas fa-apple-alt"></i></div><div class="dish-name">ANY</div></div><div class="quantity-selector"><button class="qty-btn minus">-</button><div class="qty-display">0</div><button class="qty-btn plus">+</button></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="meal-section dinner">
+                    <video autoplay loop muted playsinline>
+                        <source src="https://assets.mixkit.co/videos/preview/mixkit-full-moon-night-sky-3276-large.mp4" type="video/mp4">
+                    </video>
+                    <div class="meal-header dinner"><i class="fas fa-moon"></i><span>DINNER</span></div>
+                    <div class="dishes-container">
+                        <div class="dish-category">
+                            <div class="category-title">Sweet</div>
+                            <div class="dish-item"><div class="dish-info"><div class="dish-icon"><i class="fas fa-cookie"></i></div><div class="dish-name">DUDHI HALWA</div></div><div class="quantity-selector"><button class="qty-btn minus">-</button><div class="qty-display">0</div><button class="qty-btn plus">+</button></div></div>
+                        </div>
+                        <div class="dish-category">
+                            <div class="category-title">Starter(per bowl)</div>
+                            <div class="dish-item"><div class="dish-info"><div class="dish-icon"><i class="fas fa-pepper-hot"></i></div><div class="dish-name">DABBA GOSHT</div></div><div class="quantity-selector"><button class="qty-btn minus">-</button><div class="qty-display">0</div><button class="qty-btn plus">+</button></div></div>
+                        </div>
+                        <div class="dish-category">
+                            <div class="category-title">Roti(per unit)</div>
+                            <div class="dish-item"><div class="dish-info"><div class="dish-icon"><i class="fas fa-bread-slice"></i></div><div class="dish-name">Roti</div></div><div class="quantity-selector"><button class="qty-btn minus">-</button><div class="qty-display">0</div><button class="qty-btn plus">+</button></div></div>
+                        </div>
+                        <div class="dish-category">
+                            <div class="category-title">Rice(per plate)</div>
+                            <div class="dish-item"><div class="dish-info"><div class="dish-icon"><i class="fas fa-bowl-rice"></i></div><div class="dish-name">CHICKEN BIRYANI</div></div><div class="quantity-selector"><button class="qty-btn minus">-</button><div class="qty-display">0</div><button class="qty-btn plus">+</button></div></div>
+                        </div>
+                        <div class="dish-category">
+                            <div class="category-title">Soup(per bowl)</div>
+                            <div class="dish-item"><div class="dish-info"><div class="dish-icon"><i class="fas fa-bowl-rice"></i></div><div class="dish-name">ALMOND SOUP</div></div><div class="quantity-selector"><button class="qty-btn minus">-</button><div class="qty-display">0</div><button class="qty-btn plus">+</button></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="order-summary">
+                    <div class="summary-header"><span>Order Summary</span><span>Tuesday</span></div>
+                    <div class="summary-items" id="tuesday-summary"></div>
+                </div>
+
+                <button class="submit-btn" data-day="tuesday"><i class="fas fa-paper-plane"></i>Submit</button>
+            </div>
+
+            <!-- Wednesday -->
+            <div class="day-content" id="wednesday">
+                <video class="day-bg" autoplay loop muted playsinline style="opacity: 0.03;">
+                    <source src="https://assets.mixkit.co/videos/preview/mixkit-sunrise-in-nature-1121-large.mp4" type="video/mp4">
+                </video>
+                <h2 class="day-title">Wednesday's Special</h2>
+
+                <div class="meal-section lunch">
+                    <video autoplay loop muted playsinline>
+                        <source src="https://assets.mixkit.co/videos/preview/mixkit-sunrise-in-nature-1121-large.mp4" type="video/mp4">
+                    </video>
+                    <div class="meal-header lunch"><i class="fas fa-sun"></i><span>LUNCH</span></div>
+                    <div class="dishes-container">
+                        <div class="dish-category">
+                            <div class="category-title">Main Dish(per unit)</div>
+                            <div class="dish-item"><div class="dish-info"><div class="dish-icon"><i class="fas fa-utensils"></i></div><div class="dish-name">CHICKEN PETI BURGER</div></div><div class="quantity-selector"><button class="qty-btn minus">-</button><div class="qty-display">0</div><button class="qty-btn plus">+</button></div></div>
+                        </div>
+                        <div class="dish-category">
+                            <div class="category-title">Salad(per plate)</div>
+                            <div class="dish-item"><div class="dish-info"><div class="dish-icon"><i class="fas fa-leaf"></i></div><div class="dish-name">FRENCH FRIES</div></div><div class="quantity-selector"><button class="qty-btn minus">-</button><div class="qty-display">0</div><button class="qty-btn plus">+</button></div></div>
+                        </div>
+                        <div class="dish-category">
+                            <div class="category-title">Fruits</div>
+                            <div class="dish-item"><div class="dish-info"><div class="dish-icon"><i class="fas fa-apple-alt"></i></div><div class="dish-name">ANY</div></div><div class="quantity-selector"><button class="qty-btn minus">-</button><div class="qty-display">0</div><button class="qty-btn plus">+</button></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="meal-section dinner">
+                    <video autoplay loop muted playsinline>
+                        <source src="https://assets.mixkit.co/videos/preview/mixkit-full-moon-night-sky-3276-large.mp4" type="video/mp4">
+                    </video>
+                    <div class="meal-header dinner"><i class="fas fa-moon"></i><span>DINNER</span></div>
+                    <div class="dishes-container">
+                        <div class="dish-category">
+                            <div class="category-title">Sweet</div>
+                            <div class="dish-item"><div class="dish-info"><div class="dish-icon"><i class="fas fa-cookie"></i></div><div class="dish-name">CARAMEL PUDDING</div></div><div class="quantity-selector"><button class="qty-btn minus">-</button><div class="qty-display">0</div><button class="qty-btn plus">+</button></div></div>
+                        </div>
+                        <div class="dish-category">
+                            <div class="category-title">Starter(per bowl)</div>
+                            <div class="dish-item"><div class="dish-info"><div class="dish-icon"><i class="fas fa-pepper-hot"></i></div><div class="dish-name">BHINDI</div></div><div class="quantity-selector"><button class="qty-btn minus">-</button><div class="qty-display">0</div><button class="qty-btn plus">+</button></div></div>
+                        </div>
+                        <div class="dish-category">
+                            <div class="category-title">Roti(per unit)</div>
+                            <div class="dish-item"><div class="dish-info"><div class="dish-icon"><i class="fas fa-bread-slice"></i></div><div class="dish-name">Roti</div></div><div class="quantity-selector"><button class="qty-btn minus">-</button><div class="qty-display">0</div><button class="qty-btn plus">+</button></div></div>
+                        </div>
+                        <div class="dish-category">
+                            <div class="category-title">Rice(per plate)</div>
+                            <div class="dish-item"><div class="dish-info"><div class="dish-icon"><i class="fas fa-bowl-rice"></i></div><div class="dish-name">CHAWAL</div></div><div class="quantity-selector"><button class="qty-btn minus">-</button><div class="qty-display">0</div><button class="qty-btn plus">+</button></div></div>
+                        </div>
+                        <div class="dish-category">
+                            <div class="category-title">Gravy(per bowl)</div>
+                            <div class="dish-item"><div class="dish-info"><div class="dish-icon"><i class="fas fa-bowl-rice"></i></div><div class="dish-name">TADKA DAL</div></div><div class="quantity-selector"><button class="qty-btn minus">-</button><div class="qty-display">0</div><button class="qty-btn plus">+</button></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="order-summary">
+                    <div class="summary-header"><span>Order Summary</span><span>Wednesday</span></div>
+                    <div class="summary-items" id="wednesday-summary"></div>
+                </div>
+
+                <button class="submit-btn" data-day="wednesday"><i class="fas fa-paper-plane"></i>Submit</button>
+            </div>
+
+            <!-- Thursday -->
+            <div class="day-content" id="thursday">
+                <video class="day-bg" autoplay loop muted playsinline style="opacity: 0.03;">
+                    <source src="https://assets.mixkit.co/videos/preview/mixkit-sunrise-in-nature-1121-large.mp4" type="video/mp4">
+                </video>
+                <h2 class="day-title">Thursday's Special</h2>
+
+                <div class="meal-section lunch">
+                    <video autoplay loop muted playsinline>
+                        <source src="https://assets.mixkit.co/videos/preview/mixkit-sunrise-in-nature-1121-large.mp4" type="video/mp4">
+                    </video>
+                    <div class="meal-header lunch"><i class="fas fa-sun"></i><span>LUNCH</span></div>
+                    <div class="dishes-container">
+                        <div class="dish-category">
+                            <div class="category-title">Main Dish(per unit)</div>
+                            <div class="dish-item"><div class="dish-info"><div class="dish-icon"><i class="fas fa-utensils"></i></div><div class="dish-name">PAV BHAJI</div></div><div class="quantity-selector"><button class="qty-btn minus">-</button><div class="qty-display">0</div><button class="qty-btn plus">+</button></div></div>
+                        </div>
+                        <div class="dish-category">
+                            <div class="category-title">Salad(per bowl)</div>
+                            <div class="dish-item"><div class="dish-info"><div class="dish-icon"><i class="fas fa-leaf"></i></div><div class="dish-name">SHRIKHAND</div></div><div class="quantity-selector"><button class="qty-btn minus">-</button><div class="qty-display">0</div><button class="qty-btn plus">+</button></div></div>
+                        </div>
+                        <div class="dish-category">
+                            <div class="category-title">Fruits</div>
+                            <div class="dish-item"><div class="dish-info"><div class="dish-icon"><i class="fas fa-apple-alt"></i></div><div class="dish-name">ANY</div></div><div class="quantity-selector"><button class="qty-btn minus">-</button><div class="qty-display">0</div><button class="qty-btn plus">+</button></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="meal-section dinner">
+                    <video autoplay loop muted playsinline>
+                        <source src="https://assets.mixkit.co/videos/preview/mixkit-full-moon-night-sky-3276-large.mp4" type="video/mp4">
+                    </video>
+                    <div class="meal-header dinner"><i class="fas fa-moon"></i><span>DINNER</span></div>
+                    <div class="dishes-container">
+                        <div class="dish-category">
+                            <div class="category-title">Sweet</div>
+                            <div class="dish-item"><div class="dish-info"><div class="dish-icon"><i class="fas fa-cookie"></i></div><div class="dish-name">KHEER</div></div><div class="quantity-selector"><button class="qty-btn minus">-</button><div class="qty-display">0</div><button class="qty-btn plus">+</button></div></div>
+                        </div>
+                        <div class="dish-category">
+                            <div class="category-title">Starter(per unit)</div>
+                            <div class="dish-item"><div class="dish-info"><div class="dish-icon"><i class="fas fa-pepper-hot"></i></div><div class="dish-name">VEG RUSSIAN CUTLETS</div></div><div class="quantity-selector"><button class="qty-btn minus">-</button><div class="qty-display">0</div><button class="qty-btn plus">+</button></div></div>
+                        </div>
+                        <div class="dish-category">
+                            <div class="category-title">Roti(per unit)</div>
+                            <div class="dish-item"><div class="dish-info"><div class="dish-icon"><i class="fas fa-bread-slice"></i></div><div class="dish-name">Butter Naan</div></div><div class="quantity-selector"><button class="qty-btn minus">-</button><div class="qty-display">0</div><button class="qty-btn plus">+</button></div></div>
+                        </div>
+                        <div class="dish-category">
+                            <div class="category-title">Rice(per plate)</div>
+                            <div class="dish-item"><div class="dish-info"><div class="dish-icon"><i class="fas fa-bowl-rice"></i></div><div class="dish-name">CHAWAL</div></div><div class="quantity-selector"><button class="qty-btn minus">-</button><div class="qty-display">0</div><button class="qty-btn plus">+</button></div></div>
+                        </div>
+                        <div class="dish-category">
+                            <div class="category-title">GRAVY(per bowl)</div>
+                            <div class="dish-item"><div class="dish-info"><div class="dish-icon"><i class="fas fa-bowl-rice"></i></div><div class="dish-name">CHICKEN DO PYAZA</div></div><div class="quantity-selector"><button class="qty-btn minus">-</button><div class="qty-display">0</div><button class="qty-btn plus">+</button></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="order-summary">
+                    <div class="summary-header"><span>Order Summary</span><span>Thursday</span></div>
+                    <div class="summary-items" id="thursday-summary"></div>
+                </div>
+
+                <button class="submit-btn" data-day="thursday"><i class="fas fa-paper-plane"></i>Submit</button>
+            </div>
+
+            <!-- Friday -->
+            <div class="day-content" id="friday">
+                <video class="day-bg" autoplay loop muted playsinline style="opacity: 0.03;">
+                    <source src="https://assets.mixkit.co/videos/preview/mixkit-sunrise-in-nature-1121-large.mp4" type="video/mp4">
+                </video>
+                <h2 class="day-title">Friday's Special</h2>
+
+                <div class="meal-section lunch">
+                    <video autoplay loop muted playsinline>
+                        <source src="https://assets.mixkit.co/videos/preview/mixkit-sunrise-in-nature-1121-large.mp4" type="video/mp4">
+                    </video>
+                    <div class="meal-header lunch"><i class="fas fa-sun"></i><span>LUNCH</span></div>
+                    <div class="dishes-container">
+                        <div class="dish-category">
+                            <div class="category-title">Main Dish(per unit)</div>
+                            <div class="dish-item"><div class="dish-info"><div class="dish-icon"><i class="fas fa-utensils"></i></div><div class="dish-name">GREEN CHICKEN ROLL</div></div><div class="quantity-selector"><button class="qty-btn minus">-</button><div class="qty-display">0</div><button class="qty-btn plus">+</button></div></div>
+                        </div>
+                        <div class="dish-category">
+                            <div class="category-title">Salad(per unit)</div>
+                            <div class="dish-item"><div class="dish-info"><div class="dish-icon"><i class="fas fa-leaf"></i></div><div class="dish-name">RAGDA PETIS</div></div><div class="quantity-selector"><button class="qty-btn minus">-</button><div class="qty-display">0</div><button class="qty-btn plus">+</button></div></div>
+                        </div>
+                        <div class="dish-category">
+                            <div class="category-title">Fruits</div>
+                            <div class="dish-item"><div class="dish-info"><div class="dish-icon"><i class="fas fa-apple-alt"></i></div><div class="dish-name">ANY</div></div><div class="quantity-selector"><button class="qty-btn minus">-</button><div class="qty-display">0</div><button class="qty-btn plus">+</button></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="meal-section dinner">
+                    <video autoplay loop muted playsinline>
+                        <source src="https://assets.mixkit.co/videos/preview/mixkit-full-moon-night-sky-3276-large.mp4" type="video/mp4">
+                    </video>
+                    <div class="meal-header dinner"><i class="fas fa-moon"></i><span>DINNER</span></div>
+                    <div class="dishes-container">
+                        <div class="dish-category">
+                            <div class="category-title">Sweet</div>
+                            <div class="dish-item"><div class="dish-info"><div class="dish-icon"><i class="fas fa-cookie"></i></div><div class="dish-name">SUJI HALWA</div></div><div class="quantity-selector"><button class="qty-btn minus">-</button><div class="qty-display">0</div><button class="qty-btn plus">+</button></div></div>
+                        </div>
+                        <div class="dish-category">
+                            <div class="category-title">Starter(per bowl)</div>
+                            <div class="dish-item"><div class="dish-info"><div class="dish-icon"><i class="fas fa-pepper-hot"></i></div><div class="dish-name">PALAK BHAJI</div></div><div class="quantity-selector"><button class="qty-btn minus">-</button><div class="qty-display">0</div><button class="qty-btn plus">+</button></div></div>
+                        </div>
+                        <div class="dish-category">
+                            <div class="category-title">Roti(per unit)</div>
+                            <div class="dish-item"><div class="dish-info"><div class="dish-icon"><i class="fas fa-bread-slice"></i></div><div class="dish-name">Naan</div></div><div class="quantity-selector"><button class="qty-btn minus">-</button><div class="qty-display">0</div><button class="qty-btn plus">+</button></div></div>
+                        </div>
+                        <div class="dish-category">
+                            <div class="category-title">Rice(per plate)</div>
+                            <div class="dish-item"><div class="dish-info"><div class="dish-icon"><i class="fas fa-bowl-rice"></i></div><div class="dish-name">CHAWAL</div></div><div class="quantity-selector"><button class="qty-btn minus">-</button><div class="qty-display">0</div><button class="qty-btn plus">+</button></div></div>
+                        </div>
+                        <div class="dish-category">
+                            <div class="category-title">Gravy(per bowl)</div>
+                            <div class="dish-item"><div class="dish-info"><div class="dish-icon"><i class="fas fa-bowl-rice"></i></div><div class="dish-name">DAL GOSHT</div></div><div class="quantity-selector"><button class="qty-btn minus">-</button><div class="qty-display">0</div><button class="qty-btn plus">+</button></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="order-summary">
+                    <div class="summary-header"><span>Order Summary</span><span>Friday</span></div>
+                    <div class="summary-items" id="friday-summary"></div>
+                </div>
+
+                <button class="submit-btn" data-day="friday"><i class="fas fa-paper-plane"></i>Submit</button>
+            </div>
+
+            <!-- Saturday -->
+            <div class="day-content" id="saturday">
+                <video class="day-bg" autoplay loop muted playsinline style="opacity: 0.03;">
+                    <source src="https://assets.mixkit.co/videos/preview/mixkit-sunrise-in-nature-1121-large.mp4" type="video/mp4">
+                </video>
+                <h2 class="day-title">Saturday's Special</h2>
+
+                <div class="meal-section lunch">
+                    <video autoplay loop muted playsinline>
+                        <source src="https://assets.mixkit.co/videos/preview/mixkit-sunrise-in-nature-1121-large.mp4" type="video/mp4">
+                    </video>
+                    <div class="meal-header lunch"><i class="fas fa-sun"></i><span>LUNCH</span></div>
+                    <div class="dishes-container">
+                        <div class="dish-category">
+                            <div class="category-title">Main Dish(per unit)</div>
+                            <div class="dish-item"><div class="dish-info"><div class="dish-icon"><i class="fas fa-utensils"></i></div><div class="dish-name">VADA PAV</div></div><div class="quantity-selector"><button class="qty-btn minus">-</button><div class="qty-display">0</div><button class="qty-btn plus">+</button></div></div>
+                        </div>
+                        <div class="dish-category">
+                            <div class="category-title">Salad(per bowl)</div>
+                            <div class="dish-item"><div class="dish-info"><div class="dish-icon"><i class="fas fa-leaf"></i></div><div class="dish-name">CHIPS</div></div><div class="quantity-selector"><button class="qty-btn minus">-</button><div class="qty-display">0</div><button class="qty-btn plus">+</button></div></div>
+                        </div>
+                        <div class="dish-category">
+                            <div class="category-title">Fruits</div>
+                            <div class="dish-item"><div class="dish-info"><div class="dish-icon"><i class="fas fa-apple-alt"></i></div><div class="dish-name">ANY</div></div><div class="quantity-selector"><button class="qty-btn minus">-</button><div class="qty-display">0</div><button class="qty-btn plus">+</button></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="meal-section dinner">
+                    <video autoplay loop muted playsinline>
+                        <source src="https://assets.mixkit.co/videos/preview/mixkit-full-moon-night-sky-3276-large.mp4" type="video/mp4">
+                    </video>
+                    <div class="meal-header dinner"><i class="fas fa-moon"></i><span>DINNER</span></div>
+                    <div class="dishes-container">
+                        <div class="dish-category">
+                            <div class="category-title">Sweet</div>
+                            <div class="dish-item"><div class="dish-info"><div class="dish-icon"><i class="fas fa-cookie"></i></div><div class="dish-name">SHAHI TUKDA</div></div><div class="quantity-selector"><button class="qty-btn minus">-</button><div class="qty-display">0</div><button class="qty-btn plus">+</button></div></div>
+                        </div>
+                        <div class="dish-category">
+                            <div class="category-title">Starter(per bowl)</div>
+                            <div class="dish-item"><div class="dish-info"><div class="dish-icon"><i class="fas fa-pepper-hot"></i></div><div class="dish-name">BUTTER CHICKEN</div></div><div class="quantity-selector"><button class="qty-btn minus">-</button><div class="qty-display">0</div><button class="qty-btn plus">+</button></div></div>
+                        </div>
+                        <div class="dish-category">
+                            <div class="category-title">Roti(per unit)</div>
+                            <div class="dish-item"><div class="dish-info"><div class="dish-icon"><i class="fas fa-bread-slice"></i></div><div class="dish-name">BUTTER NAN</div></div><div class="quantity-selector"><button class="qty-btn minus">-</button><div class="qty-display">0</div><button class="qty-btn plus">+</button></div></div>
+                        </div>
+                        <div class="dish-category">
+                            <div class="category-title">Rice</div>
+                            <div class="dish-item"><div class="dish-info"><div class="dish-icon"><i class="fas fa-bowl-rice"></i></div><div class="dish-name">CHAWAL</div></div><div class="quantity-selector"><button class="qty-btn minus">-</button><div class="qty-display">0</div><button class="qty-btn plus">+</button></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="order-summary">
+                    <div class="summary-header"><span>Order Summary</span><span>Saturday</span></div>
+                    <div class="summary-items" id="saturday-summary"></div>
+                </div>
+
+                <button class="submit-btn" data-day="saturday"><i class="fas fa-paper-plane"></i>Submit</button>
+            </div>
+
+            <!-- Sunday -->
+            <div class="day-content" id="sunday">
+                <video class="day-bg" autoplay loop muted playsinline style="opacity: 0.03;">
+                    <source src="https://assets.mixkit.co/videos/preview/mixkit-sunrise-in-nature-1121-large.mp4" type="video/mp4">
+                </video>
+                <h2 class="day-title">Sunday's Special</h2>
+
+                <div class="meal-section lunch">
+                    <video autoplay loop muted playsinline>
+                        <source src="https://assets.mixkit.co/videos/preview/mixkit-sunrise-in-nature-1121-large.mp4" type="video/mp4">
+                    </video>
+                    <div class="meal-header lunch"><i class="fas fa-sun"></i><span>LUNCH</span></div>
+                    <div class="dishes-container">
+                        <div class="dish-category">
+                            <div class="category-title">Main Dish(per bowl)</div>
+                            <div class="dish-item"><div class="dish-info"><div class="dish-icon"><i class="fas fa-utensils"></i></div><div class="dish-name">CHICKEN AFGHANI</div></div><div class="quantity-selector"><button class="qty-btn minus">-</button><div class="qty-display">0</div><button class="qty-btn plus">+</button></div></div>
+                        </div>
+                        <div class="dish-category">
+                            <div class="category-title">Roti(per unit)</div>
+                            <div class="dish-item"><div class="dish-info"><div class="dish-icon"><i class="fas fa-bread-slice"></i></div><div class="dish-name">ROTI</div></div><div class="quantity-selector"><button class="qty-btn minus">-</button><div class="qty-display">0</div><button class="qty-btn plus">+</button></div></div>
+                        </div>
+                        <div class="dish-category">
+                            <div class="category-title">Rice(per plate)</div>
+                            <div class="dish-item"><div class="dish-info"><div class="dish-icon"><i class="fas fa-bowl-rice"></i></div><div class="dish-name">CHAWAL</div></div><div class="quantity-selector"><button class="qty-btn minus">-</button><div class="qty-display">0</div><button class="qty-btn plus">+</button></div></div>
+                        </div>
+                        <div class="dish-category">
+                            <div class="category-title">Drink</div>
+                            <div class="dish-item"><div class="dish-info"><div class="dish-icon"><i class="fas fa-wine-bottle"></i></div><div class="dish-name">ROSE DOODH</div></div><div class="quantity-selector"><button class="qty-btn minus">-</button><div class="qty-display">0</div><button class="qty-btn plus">+</button></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="meal-section dinner">
+                    <video autoplay loop muted playsinline>
+                        <source src="https://assets.mixkit.co/videos/preview/mixkit-full-moon-night-sky-3276-large.mp4" type="video/mp4">
+                    </video>
+                    <div class="meal-header dinner"><i class="fas fa-moon"></i><span>DINNER</span></div>
+                    <div class="dishes-container">
+                        <div class="dish-category">
+                            <div class="category-title">Sweet</div>
+                            <div class="dish-item"><div class="dish-info"><div class="dish-icon"><i class="fas fa-cookie"></i></div><div class="dish-name">ICE CREAM</div></div><div class="quantity-selector"><button class="qty-btn minus">-</button><div class="qty-display">0</div><button class="qty-btn plus">+</button></div></div>
+                        </div>
+                        <div class="dish-category">
+                            <div class="category-title">Starter(per bowl)</div>
+                            <div class="dish-item"><div class="dish-info"><div class="dish-icon"><i class="fas fa-pepper-hot"></i></div><div class="dish-name">MURG MUSALLAM</div></div><div class="quantity-selector"><button class="qty-btn minus">-</button><div class="qty-display">0</div><button class="qty-btn plus">+</button></div></div>
+                        </div>
+                        <div class="dish-category">
+                            <div class="category-title">Roti(per unit)</div>
+                            <div class="dish-item"><div class="dish-info"><div class="dish-icon"><i class="fas fa-bread-slice"></i></div><div class="dish-name">ROTI</div></div><div class="quantity-selector"><button class="qty-btn minus">-</button><div class="qty-display">0</div><button class="qty-btn plus">+</button></div></div>
+                        </div>
+                        <div class="dish-category">
+                            <div class="category-title">Rice(per plate)</div>
+                            <div class="dish-item"><div class="dish-info"><div class="dish-icon"><i class="fas fa-bowl-rice"></i></div><div class="dish-name">CHICKEN SHANGHAI</div></div><div class="quantity-selector"><button class="qty-btn minus">-</button><div class="qty-display">0</div><button class="qty-btn plus">+</button></div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="order-summary">
+                    <div class="summary-header"><span>Order Summary</span><span>Sunday</span></div>
+                    <div class="summary-items" id="sunday-summary"></div>
+                </div>
+
+                <button class="submit-btn" data-day="sunday"><i class="fas fa-paper-plane"></i>Submit</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="toast" class="toast">Order Delivered</div>
+
+    <!-- Password Modal -->
+    <div id="db-password-modal" class="db-modal" role="dialog" aria-modal="true" aria-labelledby="db-modal-title" style="display:none;">
+        <div class="db-modal-overlay" id="db-modal-overlay"></div>
+        <div class="db-modal-content" role="document">
+            <h3 id="db-modal-title">Protected: View Orders</h3>
+            <p>Enter the password to open the orders database.</p>
+            <label for="db-password-input">Password</label>
+            <input id="db-password-input" type="password" autocomplete="current-password" />
+            <div>
+                <button id="db-cancel-btn" type="button">Cancel</button>
+                <button id="db-unlock-btn" type="button">Unlock</button>
+            </div>
+            <p id="db-modal-error" style="display:none;"></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
